@@ -1,0 +1,8 @@
+export default function ImageItem(props) {   
+    return (
+        <TouchableOpacity disabled={isLoading} activeOpacity={1}>
+            <ImageBackground onLoadEnd={() => setLoading(false)} source={{uri: linkOfImg}}>
+            </ImageBackground>
+        </TouchableOpacity>
+    )
+}
