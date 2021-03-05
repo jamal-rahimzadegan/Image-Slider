@@ -1,0 +1,18 @@
+export default function Slider(props) {
+
+    return (
+        <View>
+        <FlatList
+             inverted horizontal pagingEnabled
+             keyExtractor={(item) => item.id}
+             extraData={this.state}
+             onScroll={this.handleSliderBullet.bind(this)}
+             showsHorizontalScrollIndicator={false}
+             data={this.state._photos}
+            <ImageItem item={item} />)}
+             renderItem={(item) => (
+      />
+      <SliderBullets activeImg={activeImgId}  photos={photoList}/>
+    </View>
+    )
+}
