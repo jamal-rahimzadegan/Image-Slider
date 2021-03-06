@@ -46,11 +46,9 @@ export default function SliderBullets(props) {
 export default function Slider(props) {
   const [photos, setPhotos] = useState([]);
 
-   const handleSliderBullet=(e)=> {
+    const handleSliderBullet=(e)=> {
         let sliderImgOffset = Math.round((e.nativeEvent.contentOffset.x / e.nativeEvent.layoutMeasurement.width))
-        if (this.state.activeImg != sliderImgOffset) {
-            this.setState({activeImg: sliderImgOffset}, () => null)
-        }
+        if (activeImg != sliderImgOffset) setActiveImg(sliderImgOffset)
     }
 
     return (
