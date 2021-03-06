@@ -3,12 +3,11 @@ Pure Javascript image slider for react native
 
 - `ImageItem` &mdash; Wrapper component for img
 ```js
-export default function ImageItem(props) {   
+export default function ImageItem(props) {  
+const {linkOfImg} = props
     return (
-        <TouchableOpacity disabled={isLoading} activeOpacity={1}>
-            <ImageBackground onLoadEnd={() => setLoading(false)} source={{uri: linkOfImg}}>
-            </ImageBackground>
-        </TouchableOpacity>
+     <ImageBackground  source={{uri: linkOfImg}}>
+     </ImageBackground>
     )
 }
 
