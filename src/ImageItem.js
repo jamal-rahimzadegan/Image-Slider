@@ -1,7 +1,7 @@
 export default function ImageItem(props) {  
-const {linkOfImg} = props
+const {imgSrc} = props
     return (
-     <ImageBackground  source={{uri: linkOfImg}}>
+     <ImageBackground  source={{uri:imgSrc}}>
      </ImageBackground>
     )
 }
