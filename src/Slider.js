@@ -1,27 +1,28 @@
-improt SliderBullet from './SliderBullet';
+import SliderBullet from './SliderBullet';
 
-export default function Slider(props) {
+export default function Slider() {
   const [photos, setPhotos] = useState([]);
+  const [activeImg, setActiveImg] = useState(0);
 
-    const handleSliderBullet=(e)=> {
-        let sliderImgOffset = Math.round((e.nativeEvent.contentOffset.x / e.nativeEvent.layoutMeasurement.width))
-        if (activeImg != sliderImgOffset) setActiveImg(sliderImgOffset)
-    }
+  const handleSliderBullet = (e) => {
+    const { contentOffset, layoutMeasurement } = e.nativeEvent;
+    let sliderImgOffset = Math.round(contentOffset.x / layoutMeasurement.width);
+    if (activeImg !== sliderImgOffset) setActiveImg(sliderImgOffset);
+  };
 
-    return (
-        <View>
-        <FlatList
-             inverted horizontal pagingEnabled
-             keyExtractor={(item) => item.id}
-             onScroll={handleSliderBullet.bind(this)}
-             showsHorizontalScrollIndicator={false}
-             data={photos}
-             renderItem={(item) => (<ImageItem item={item} />)}
+  return (
+    <>
+      <FlatList
+        inverted
+        horizontal
+        pagingEnabled
+        keyExtractor={(item) => item.id}
+        onScroll={handleSliderBullet}
+        showsHorizontalScrollIndicator={false}
+        data={photos}
+        renderItem={(item) => <ImageItem item={item} />}
       />
-      <SliderBullets activeImg={activeImgId}  photos={photos}/>
-    </View>
-    )
+      <SliderBullets activeImg={"pass id of active img"} photos={photos} />
+    </>
+  );
 }
-
-
-
